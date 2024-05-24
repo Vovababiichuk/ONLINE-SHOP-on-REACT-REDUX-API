@@ -96,26 +96,15 @@
 	cursor: pointer;
 }
 
-.account svg {
+.account .icon {
 	width: 24px;
 	height: 24px;
+	transition: color .2s ease-in-out ;
+	color: var(--grey)
 }
 
-.icon-fav {
-	stroke: var(--grey);
-	fill: none;
-}
-
-.icon-cart {
-	fill: var(--grey);
-}
-
-.icon-fav:hover {
-	stroke: var(--white);
-}
-
-.icon-cart:hover {
-	fill: var(--white);
+.account .icon:hover {
+	color: var(--light)
 }
 
 .cart {

@@ -3,7 +3,8 @@ import styles from './Header.module.css';
 import { ROUTES } from '../../utils/routes';
 import LOGO from '../../assets/images/logo.svg';
 import AVATAR from '../../assets/images/avatar.svg';
-import { Heart, Search, ShoppingBag } from 'lucide-react';
+import { FaSearch, FaRegHeart  } from "react-icons/fa";
+import { ShoppingBag } from 'lucide-react'
 export const Header = () => {
 	return (
 		<header className={styles.header}>
@@ -21,7 +22,7 @@ export const Header = () => {
 				</div>
 				<form className={styles.form}>
 					<div className={styles.icon}>
-						<Search className={styles.iconSearch} />
+						<FaSearch className={styles.iconSearch} />
 					</div>
 					<div className={styles.input}>
 						<input
@@ -37,10 +38,10 @@ export const Header = () => {
 				</form>
 				<div className={styles.account}>
 					<Link to={ROUTES.HOME} className={styles.favorites}>
-						<Heart />
+						<FaRegHeart className={styles.icon} />
 					</Link>
 					<Link to={ROUTES.CART} className={styles.cart}>
-						<ShoppingBag />
+						<ShoppingBag className={styles.icon} />
 						<span className={styles.count}>2</span>
 					</Link>
 				</div>

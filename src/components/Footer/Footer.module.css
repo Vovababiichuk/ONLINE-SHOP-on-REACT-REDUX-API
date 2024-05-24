@@ -1,0 +1,52 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.logo {
+  width: 61px;
+}
+
+.logo a {
+  height: 100%;
+}
+
+.rights {
+  color: var(--dark-sea);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.rights a {
+  color: var(--violet);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+	transition: color .2s ease-in-out ;
+	color: var(--dark-sea);
+}
+
+.icon:hover {
+	color: var(--violet);
+}
+
+.socials a:nth-of-type(2) .icon {
+  width: 23px;
+  height: 23px;
+}
+
+.socials a:nth-of-type(3) .icon {
+  width: 25px;
+  height: 25px;
+}
