@@ -1,6 +1,50 @@
-
+import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
+import { ROUTES } from '../../utils/routes';
+import LOGO from '../../assets/images/logo.svg';
+import AVATAR from '../../assets/images/avatar.svg';
+import { Heart, Search, ShoppingBag } from 'lucide-react';
 export const Header = () => {
 	return (
-		<div>Header</div>
-	)
-}
+		<header className={styles.header}>
+			<div className={styles.logo}>
+				<Link to={ROUTES.HOME}>
+					<img src={LOGO} alt='logo stuff' />
+				</Link>
+			</div>
+			<div className={styles.info}>
+				<div className={styles.user}>
+					<div className={styles.avatar}>
+						<img className={styles.avatarImg} src={AVATAR} alt="avatar" />
+					</div>
+					<div className={styles.username}>Guest</div>
+				</div>
+				<form className={styles.form}>
+					<div className={styles.icon}>
+						<Search className={styles.iconSearch} />
+					</div>
+					<div className={styles.input}>
+						<input
+							type='search'
+							name='search'
+							placeholder='Search products...'
+							autoComplete='off'
+							onChange={() => {}}
+							value=''
+						/>
+					</div>
+					{false && <div className={styles.box}></div>}
+				</form>
+				<div className={styles.account}>
+					<Link to={ROUTES.HOME} className={styles.favorites}>
+						<Heart />
+					</Link>
+					<Link to={ROUTES.CART} className={styles.cart}>
+						<ShoppingBag />
+						<span className={styles.count}>2</span>
+					</Link>
+				</div>
+			</div>
+		</header>
+	);
+};
