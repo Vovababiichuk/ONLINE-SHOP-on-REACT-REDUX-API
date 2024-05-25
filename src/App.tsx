@@ -1,12 +1,13 @@
-import { useDispatch } from 'react-redux'
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { AppRoutes } from './components/Routes/Routes';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { useEffect } from 'react'
 import { fetchGetCategories } from './features/categories/categoriesSlice'
+import { useAppDispatch } from './features/store'
+
 function App() {
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		dispatch(fetchGetCategories());

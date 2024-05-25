@@ -39,7 +39,7 @@ const categoriesSlice = createSlice({
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
-		builder.addCase(fetchGetCategories.pending, state => {
+		builder.addCase(fetchGetCategories.pending, (state) => {
 			state.isLoading = true;
 			state.error = null;
 		});
@@ -47,7 +47,7 @@ const categoriesSlice = createSlice({
 			state.list = action.payload;
 			state.isLoading = false;
 		});
-		builder.addCase(fetchGetCategories.rejected, (state, action: PayloadAction<string | undefined>) => {
+		builder.addCase(fetchGetCategories.rejected, (state, action) => {
 			state.isLoading = false;
 			state.error = action.payload || 'Error fetching categories';
 		});
