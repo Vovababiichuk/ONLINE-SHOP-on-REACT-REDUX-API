@@ -10,6 +10,7 @@
 	text-transform: uppercase;
   font-weight: 600;
   line-height: 20px;
+  text-align: start;
 }
 
 .menu {
@@ -43,4 +44,8 @@
 
 .sidebarFooter .link:nth-child(2) {
   text-decoration: underline;
+}
+
+.loading {
+  padding: 20px;
 }

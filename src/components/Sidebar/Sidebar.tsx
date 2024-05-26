@@ -12,6 +12,7 @@ interface Category {
 
 interface CategoriesState {
 	list: Category[];
+	isLoading: boolean;
 }
 
 interface RootState {
@@ -19,16 +20,17 @@ interface RootState {
 }
 
 export const Sidebar = () => {
-	const { list } = useSelector(({ categories }: RootState) => categories);
+	const { list, isLoading } = useSelector(({ categories }: RootState) => categories);
+
+	if (isLoading) {
+		return <div className={styles.loading}>Loading...</div>;
+	}
 
 	const filterCategories = (categories: Category[]): Category[] => {
 		return categories.filter(category => !category.name.includes('Testing'));
 	};
 
 	const filteredList = filterCategories(list);
-	// console.log('filteredList:', filteredList);
-
-	console.log('list:', list);
 
 	return (
 		<section className={styles.sidebar}>
@@ -55,3 +57,5 @@ export const Sidebar = () => {
 		</section>
 	);
 };
+
+
