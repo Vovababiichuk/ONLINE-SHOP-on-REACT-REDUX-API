@@ -27,15 +27,15 @@ export const Footer = () => {
 			</div>
 
 			<div className={styles.socials}>
-				<a href='https://youtube.com' target='_blank' rel='noreferrer'>
+				<a href='#' target='_blank' rel='noreferrer' onClick={(e) => e.preventDefault()}>
 					<CiYoutube className={styles.icon} />
 				</a>
 
-				<a href='https://facebook.com' target='_blank' rel='noreferrer'>
+				<a href='#' target='_blank' rel='noreferrer' onClick={(e) => e.preventDefault()}>
 					<CiFacebook className={styles.icon} />
 				</a>
 
-				<a href='https://instagram.com' target='_blank' rel='noreferrer'>
+				<a href='#' target='_blank' rel='noreferrer' onClick={(e) => e.preventDefault()}>
 					<IoLogoInstagram className={styles.icon} />
 				</a>
 			</div>
