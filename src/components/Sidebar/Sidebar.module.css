@@ -1,51 +1,51 @@
 .sidebar {
-  width: 304px;
-  padding: 24px;
-  height: 423px;
-  display: flex;
-  flex-direction: column;
+	width: 304px;
+	padding: 24px;
+	height: 423px;
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
 	text-transform: uppercase;
-  font-weight: 600;
-  line-height: 20px;
-  text-align: start;
+	font-weight: 600;
+	line-height: 20px;
+	text-align: start;
 }
 
 .menu {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
+	margin-top: 32px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
 }
 
 .link {
-  color: var(--dark-sea);
-  font-size: 14px;
-  line-height: 17px;
-  text-transform: capitalize;
-  transition: color .2s ease-in-out;
+	color: var(--dark-sea);
+	font-size: 14px;
+	line-height: 17px;
+	text-transform: capitalize;
+	transition: color 0.2s ease-in-out;
 }
 
 .link:hover {
-  color: var(--white);
+	color: var(--white);
 }
 
 .link.active {
-  color: var(--violet);
+	color: var(--green);
 }
 
 .sidebarFooter {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
 }
 
 .sidebarFooter .link:nth-child(2) {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 .loading {
-  padding: 20px;
+	padding: 20px;
 }

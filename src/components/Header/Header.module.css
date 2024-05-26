@@ -29,19 +29,19 @@
 	border-radius: 50%;
 	width: 36px;
 	height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .avatarImg {
-  height: 22px;
-  width: 22px;
+	height: 22px;
+	width: 22px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-  display: block;
-  margin-right: 4px;
+	display: block;
+	margin-right: 4px;
 }
 
 .username {
@@ -70,7 +70,7 @@
 .iconSearch {
 	width: 13px;
 	height: 13px;
-	color: var(--dark-sea);;
+	color: var(--dark-sea);
 }
 
 .input {
@@ -101,12 +101,12 @@
 .account .icon {
 	width: 24px;
 	height: 24px;
-	transition: color .2s ease-in-out ;
-	color: var(--grey)
+	transition: color 0.2s ease-in-out;
+	color: var(--grey);
 }
 
 .account .icon:hover {
-	color: var(--light)
+	color: var(--light);
 }
 
 .cart {
@@ -117,7 +117,7 @@
 	position: absolute;
 	width: 14px;
 	height: 14px;
-	background: var(--violet);
+	background: var(--green);
 	right: -2px;
 	bottom: -2px;
 	border-radius: 50%;
@@ -126,6 +126,7 @@
 	color: var(--light);
 	text-align: center;
 	line-height: 15px;
+	color: var(--dark-sea)
 }
 
 .box {
