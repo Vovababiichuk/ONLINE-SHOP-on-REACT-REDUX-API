@@ -10,12 +10,12 @@
 	width: 140px;
 }
 
-.info {
+/* .info {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-grow: 1;
-}
+} */
 
 .user {
 	display: flex;

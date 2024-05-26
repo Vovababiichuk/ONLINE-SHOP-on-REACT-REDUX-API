@@ -36,7 +36,9 @@ export const Sidebar = () => {
 			<nav>
 				<ul className={styles.menu}>
 					{filteredList.slice(0, 5).map(({ id, name }) => (
-						<NavLink to={`/categories/${id}`} key={id}>
+						<NavLink
+						className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+						to={`/categories/${id}`} key={id}>
 							<li>{name}</li>
 						</NavLink>
 					))}

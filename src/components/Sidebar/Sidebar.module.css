@@ -27,10 +27,6 @@
   transition: color .2s ease-in-out;
 }
 
-.link:nth-child(2) {
-	text-decoration: underline;
-}
-
 .link:hover {
   color: var(--white);
 }
@@ -43,4 +39,8 @@
   margin-top: auto;
   display: flex;
   justify-content: space-between;
+}
+
+.sidebarFooter .link:nth-child(2) {
+  text-decoration: underline;
 }
