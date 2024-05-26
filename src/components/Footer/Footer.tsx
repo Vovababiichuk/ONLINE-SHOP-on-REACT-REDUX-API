@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import { ROUTES } from '../../utils/routes';
-import LOGO from '../../assets/images/logo.svg';
+import LOGO from '../../assets/images/logo2.svg';
 import { CiFacebook } from 'react-icons/ci';
 import { CiYoutube } from 'react-icons/ci';
 import { IoLogoInstagram } from "react-icons/io";
