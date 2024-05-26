@@ -111,7 +111,7 @@ section {
 }
 
 button {
-	background: var(--green-dark);
+	background: var(--violet-dark);
 	border-radius: 6px;
 	padding: 9px 20px;
 	font-weight: 600;
@@ -120,7 +120,7 @@ button {
 }
 
 button:hover {
-	background: var(--green);
+	background: var(--violet);
 }
 
 h2 {

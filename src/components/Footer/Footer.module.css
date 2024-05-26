@@ -23,7 +23,7 @@
 }
 
 .rights a {
-	color: var(--green);
+	color: var(--violet);
 }
 
 .socials {
@@ -40,7 +40,7 @@
 }
 
 .icon:hover {
-	color: var(--green);
+	color: var(--violet);
 }
 
 .socials a:nth-of-type(2) .icon {

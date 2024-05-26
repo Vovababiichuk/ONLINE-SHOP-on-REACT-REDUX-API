@@ -4,7 +4,7 @@ import { ROUTES } from '../../utils/routes';
 import LOGO from '../../assets/images/logo2.svg';
 import { CiFacebook } from 'react-icons/ci';
 import { CiYoutube } from 'react-icons/ci';
-import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoInstagram } from 'react-icons/io';
 
 export const Footer = () => {
 	return (
@@ -27,16 +27,16 @@ export const Footer = () => {
 			</div>
 
 			<div className={styles.socials}>
-				<a href='https://instagram.com' target='_blank' rel='noreferrer'>
-					<IoLogoInstagram  className={styles.icon} />
+				<a href='https://youtube.com' target='_blank' rel='noreferrer'>
+					<CiYoutube className={styles.icon} />
 				</a>
 
 				<a href='https://facebook.com' target='_blank' rel='noreferrer'>
 					<CiFacebook className={styles.icon} />
 				</a>
 
-				<a href='https://youtube.com' target='_blank' rel='noreferrer'>
-					<CiYoutube className={styles.icon} />
+				<a href='https://instagram.com' target='_blank' rel='noreferrer'>
+					<IoLogoInstagram className={styles.icon} />
 				</a>
 			</div>
 		</footer>

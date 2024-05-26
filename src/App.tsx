@@ -1,6 +1,6 @@
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
-import { AppRoutes } from './components/Routes/Routes';
+import AppRoutes from './components/Routes/AppRoutes';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { useEffect } from 'react'
 import { fetchGetCategories } from './features/categories/categoriesSlice'
@@ -11,13 +11,12 @@ function App() {
 
 	useEffect(() => {
 		dispatch(fetchGetCategories());
-		console.log( 'fetchGetCategories' )
 	}, [dispatch])
 
 	return (
 		<div className='wrapper'>
 			<Header />
-			<main className='main'>
+			<main className='main container'>
 				<Sidebar />
 				<AppRoutes />
 			</main>
