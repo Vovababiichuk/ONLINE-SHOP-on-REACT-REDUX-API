@@ -20,7 +20,9 @@ interface RootState {
 }
 
 export const Sidebar = () => {
-	const { list, isLoading } = useSelector(({ categories }: RootState) => categories);
+	const { list, isLoading } = useSelector(
+		({ categories }: RootState) => categories
+	);
 
 	if (isLoading) {
 		return <div className={styles.loading}>Loading...</div>;
@@ -30,17 +32,21 @@ export const Sidebar = () => {
 		return categories.filter(category => !category.name.includes('Testing'));
 	};
 
-	const filteredList = filterCategories(list);
+	const filteredList = filterCategories(list).slice(0, 5);
 
 	return (
 		<section className={styles.sidebar}>
 			<h2 className={styles.title}>Categories</h2>
 			<nav>
 				<ul className={styles.menu}>
-					{filteredList.slice(0, 5).map(({ id, name }) => (
+					{filteredList.map(({ id, name }) => (
 						<NavLink
-						className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
-						to={`/categories/${id}`} key={id}>
+							className={({ isActive }) =>
+								`${styles.link} ${isActive ? styles.active : ''}`
+							}
+							to={`/categories/${id}`}
+							key={id}
+						>
 							<li>{name}</li>
 						</NavLink>
 					))}
@@ -57,5 +63,3 @@ export const Sidebar = () => {
 		</section>
 	);
 };
-
-
