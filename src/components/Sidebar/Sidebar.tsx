@@ -45,10 +45,10 @@ export const Sidebar = () => {
 				)}
 			</nav>
 			<div className={styles.sidebarFooter}>
-				<a href='/help' target='_blank' className={styles.link}>
+				<a onClick={(e) => e.preventDefault()} href='#' target='_blank' className={styles.link}>
 					Help
 				</a>
-				<a href='/terms' target='_blank' className={styles.link}>
+				<a onClick={(e) => e.preventDefault()} href='#' target='_blank' className={styles.link}>
 					Terms & Conditions
 				</a>
 			</div>
