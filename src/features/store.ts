@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 // Імпортуємо редюсер для категорій
 import categoriesSlice from './categories/categoriesSlice';
+import productsSlice from './products/productSlice';
 
 // Створюємо та конфігуруємо Redux Store
 export const store = configureStore({
 	reducer: {
 		// Додаємо редюсер для категорій до основного редюсера
 		categories: categoriesSlice,
+		products: productsSlice,
 	},
 	// Вмикаємо Redux DevTools тільки у режимі розробки
 	devTools: process.env.NODE_ENV !== 'production',

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import { ROUTES } from '../../utils/routes';
-import LOGO from '../../assets/images/logo2.svg';
+import LOGO from '../../assets/images/logo.svg';
 import AVATAR from '../../assets/images/avatar.svg';
 import { FaSearch, FaRegHeart } from 'react-icons/fa';
 import { ShoppingBag } from 'lucide-react';

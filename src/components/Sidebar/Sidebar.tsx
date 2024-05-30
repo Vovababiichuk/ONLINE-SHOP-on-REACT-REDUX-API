@@ -2,53 +2,40 @@ import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { useSelector } from 'react-redux';
 
-interface Category {
-	id: number;
-	name: string;
-	image: string;
-	createdAt: string;
-	updatedAt: string;
-}
-
-interface CategoriesState {
-	list: Category[];
-	isLoading: boolean;
-}
-
-interface RootState {
-	categories: CategoriesState;
-}
+type RootState = {
+	categories: {
+		list: string[];
+		isLoading: boolean;
+	};
+};
 
 export const Sidebar = () => {
 	const { list, isLoading } = useSelector(
 		({ categories }: RootState) => categories
 	);
 
+	console.log(list);
+
 	if (isLoading) {
 		return <div className={styles.loading}>Loading...</div>;
 	}
-
-	const filterCategories = (categories: Category[]): Category[] => {
-		return categories.filter(category => !category.name.includes('Testing'));
-	};
-
-	const filteredList = filterCategories(list).slice(0, 5);
 
 	return (
 		<section className={styles.sidebar}>
 			<h2 className={styles.title}>Categories</h2>
 			<nav>
 				<ul className={styles.menu}>
-					{filteredList.map(({ id, name }) => (
-						<NavLink
-							className={({ isActive }) =>
-								`${styles.link} ${isActive ? styles.active : ''}`
-							}
-							to={`/categories/${id}`}
-							key={id}
-						>
-							<li>{name}</li>
-						</NavLink>
+					{list.map((category, id) => (
+						<li key={id}>
+							<NavLink
+								className={({ isActive }) =>
+									`${styles.link} ${isActive ? styles.active : ''}`
+								}
+								to={`/categories/${category}`}
+							>
+								{category}
+							</NavLink>
+						</li>
 					))}
 				</ul>
 			</nav>

@@ -5,12 +5,14 @@ import { Sidebar } from './components/Sidebar/Sidebar';
 import { useEffect } from 'react'
 import { fetchGetCategories } from './features/categories/categoriesSlice'
 import { useAppDispatch } from './features/store'
+import { fetchGetProducts } from './features/products/productSlice'
 
 function App() {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		dispatch(fetchGetCategories());
+		dispatch(fetchGetProducts());
 	}, [dispatch])
 
 	return (

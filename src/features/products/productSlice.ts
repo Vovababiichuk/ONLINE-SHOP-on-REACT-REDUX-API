@@ -4,28 +4,42 @@ import axios from 'axios';
 import { BASE_URL } from '../../utils/constants';
 
 interface Category {
+	id: number;
 	name: string;
+	img: string;
+}
+
+interface Products {
+	id: number;
+	title: string;
+	price: number;
+	description: string;
+	category: Category;
+	images: string[];
+	amount: number;
 }
 
 interface categoriesState {
-	list: Category[];
+	list: Products[];
 	isLoading: boolean;
 	error: string | null;
 }
 
 const initialState: categoriesState = {
 	list: [],
+	// filtered: [],
+	// related: [],
 	isLoading: false,
 	error: null,
 };
 
-export const fetchGetCategories = createAsyncThunk<Category[], void, { rejectValue: string }>(
-	'categories/fetchGetCategories',
+export const fetchGetProducts = createAsyncThunk<Products[], void, { rejectValue: string }>(
+	'products/fetchGetProducts',
 	async ( _, thunkAPI ) => {
 		try {
-			const res = await axios.get(`${BASE_URL}/categories`);
+			const res = await axios.get(`${BASE_URL}/products`);
 			console.log(res.data)
-			return res.data as Category[];
+			return res.data as Products[];
 		} catch (err) {
 			console.log(err);
 			return thunkAPI.rejectWithValue('Error fetching categories');
@@ -33,24 +47,25 @@ export const fetchGetCategories = createAsyncThunk<Category[], void, { rejectVal
 	}
 );
 
-const categoriesSlice = createSlice({
-	name: 'categories',
+const productsSlice = createSlice({
+	name: 'products',
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
-		builder.addCase(fetchGetCategories.pending, (state) => {
+		builder.addCase(fetchGetProducts.pending, (state) => {
 			state.isLoading = true;
 			state.error = null;
 		});
-		builder.addCase(fetchGetCategories.fulfilled, (state, action: PayloadAction<Category[]>) => {
+		builder.addCase(fetchGetProducts.fulfilled, (state, action: PayloadAction<Products[]>) => {
 			state.list = action.payload;
 			state.isLoading = false;
 		});
-		builder.addCase(fetchGetCategories.rejected, (state, action) => {
+		builder.addCase(fetchGetProducts.rejected, (state, action) => {
 			state.isLoading = false;
 			state.error = action.payload || 'Error fetching categories';
 		});
 	},
 });
 
-export default categoriesSlice.reducer;
+
+export default productsSlice.reducer;
