@@ -25,7 +25,7 @@ export const Products = () => {
 	return (
 		<section className={styles.products}>
 			<h2 className={styles.title}>Trending</h2>
-			<div>
+			<div className={styles.cardWrap}>
 				{isLoading ? (
 					<div className={styles.skeleton}>
 						<ul className='menuSkeleton'>
@@ -66,6 +66,7 @@ export const Products = () => {
 					</ul>
 				)}
 			</div>
+			<button className={styles.button + ' ' + styles.buttonProducts}>Shop Now</button>
 		</section>
 	);
 };

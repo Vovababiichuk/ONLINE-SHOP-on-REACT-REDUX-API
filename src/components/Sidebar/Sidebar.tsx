@@ -20,11 +20,11 @@ export const Sidebar = () => {
 			<nav>
 				{isLoading ? (
 					<div className={styles.skeleton}>
-						<ul className='menuSkeleton'>
-							<li className='skeletonItem'></li>
-							<li className='skeletonItem'></li>
-							<li className='skeletonItem'></li>
-							<li className='skeletonItem'></li>
+						<ul className={styles.menuSkeleton}>
+							<li className={styles.skeletonItem}></li>
+							<li className={styles.skeletonItem}></li>
+							<li className={styles.skeletonItem}></li>
+							<li className={styles.skeletonItem}></li>
 						</ul>
 					</div>
 				) : (

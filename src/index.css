@@ -111,16 +111,17 @@ section {
 }
 
 button {
-	background: var(--violet-dark);
+	background-color: var(--violet-dark);
 	border-radius: 6px;
 	padding: 9px 20px;
 	font-weight: 600;
 	line-height: 20px;
 	cursor: pointer;
+	transition: background-color .2s ease-in-out;
 }
 
 button:hover {
-	background: var(--violet);
+	background-color: var(--violet);
 }
 
 h2 {
@@ -151,21 +152,4 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-
-.menuSkeleton {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-}
-
-.skeletonItem {
-	background-color: #576067;
-	opacity: 0.4;
-	height: 20px;
-	border-radius: 4px;
 }
