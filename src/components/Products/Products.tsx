@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './Products.module.css';
 import { useSelector } from 'react-redux';
 import { IProducts } from '../../features/products/productSlice';
-import { StarRating } from '../StarRating/StarRating'
+import { StarRating } from '../StarRating/StarRating';
 
 type RootState = {
 	products: {
@@ -28,17 +28,53 @@ export const Products = () => {
 			<div className={styles.cardWrap}>
 				{isLoading ? (
 					<div className={styles.skeleton}>
-						<ul className='menuSkeleton'>
-							<li className='skeletonItem'></li>
-							<li className='skeletonItem'></li>
-							<li className='skeletonItem'></li>
-							<li className='skeletonItem'></li>
+						<ul className={styles.cardSkeleton}>
+							<li className={styles.skeletonItem}>
+								<div className={styles.skeletonImage}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonCategory}></div>
+								<div className={styles.skeletonPrice}></div>
+								<div className={styles.skeletonRating}></div>
+							</li>
+							<li className={styles.skeletonItem}>
+								<div className={styles.skeletonImage}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonCategory}></div>
+								<div className={styles.skeletonPrice}></div>
+								<div className={styles.skeletonRating}></div>
+							</li>
+							<li className={styles.skeletonItem}>
+								<div className={styles.skeletonImage}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonCategory}></div>
+								<div className={styles.skeletonPrice}></div>
+								<div className={styles.skeletonRating}></div>
+							</li>
+							<li className={styles.skeletonItem}>
+								<div className={styles.skeletonImage}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonCategory}></div>
+								<div className={styles.skeletonPrice}></div>
+								<div className={styles.skeletonRating}></div>
+							</li>
+							<li className={styles.skeletonItem}>
+								<div className={styles.skeletonImage}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonTitle}></div>
+								<div className={styles.skeletonCategory}></div>
+								<div className={styles.skeletonPrice}></div>
+								<div className={styles.skeletonRating}></div>
+							</li>
 						</ul>
 					</div>
 				) : (
 					<ul className={styles.card}>
 						{popularProducts.map(product => (
-							<div className={styles.productCardWrap}>
+							<div key={product.id} className={styles.productCardWrap}>
 								<li className={styles.productItem}>
 									<Link to={`/${product.id}`} className={styles.productLink}>
 										<div className={styles.productImageWrap}>
@@ -56,7 +92,9 @@ export const Products = () => {
 											<p className={styles.productPrice}>${product.price}</p>
 											<div className={styles.productRating}>
 												<StarRating rating={product.rating.rate} />
-												<span className={styles.review}>({product.rating.count} reviews)</span>
+												<span className={styles.review}>
+													({product.rating.count} reviews)
+												</span>
 											</div>
 										</div>
 									</Link>
@@ -66,7 +104,9 @@ export const Products = () => {
 					</ul>
 				)}
 			</div>
-			<button className={styles.button + ' ' + styles.buttonProducts}>Shop Now</button>
+			<button className={styles.button + ' ' + styles.buttonProducts}>
+				Shop Now
+			</button>
 		</section>
 	);
 };
