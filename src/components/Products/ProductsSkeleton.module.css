@@ -1,0 +1,48 @@
+.cardSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.skeletonItem {
+  width: 240px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.skeletonImage {
+  width: 240px;
+  height: 280px;
+  background-color: #576067;
+  border-radius: 8px;
+}
+
+.skeletonTitle {
+  height: 20px;
+  background-color: #576067;
+	border-radius: 4px;
+}
+
+.skeletonCategory {
+  height: 16px;
+  background-color: #576067;
+	border-radius: 4px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.skeletonPrice {
+  height: 20px;
+  background-color: #576067;
+	border-radius: 4px;
+  width: 100%;
+  max-width: 100px;
+}
+
+.skeletonRating {
+  height: 16px;
+  background-color: #576067;
+	border-radius: 4px;
+}

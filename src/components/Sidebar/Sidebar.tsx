@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { useSelector } from 'react-redux';
+import { SkeletonSidebar } from './SkeletonSidebar'
 
 type RootState = {
 	categories: {
@@ -19,14 +20,7 @@ export const Sidebar = () => {
 			<h2 className={styles.title}>Categories</h2>
 			<nav>
 				{isLoading ? (
-					<div className={styles.skeleton}>
-						<ul className={styles.menuSkeleton}>
-							<li className={styles.skeletonItem}></li>
-							<li className={styles.skeletonItem}></li>
-							<li className={styles.skeletonItem}></li>
-							<li className={styles.skeletonItem}></li>
-						</ul>
-					</div>
+					<SkeletonSidebar />
 				) : (
 					<ul className={styles.menu}>
 						{list.map((category) => (
