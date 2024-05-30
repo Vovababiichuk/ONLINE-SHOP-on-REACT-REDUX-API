@@ -1,0 +1,8 @@
+.starRating {
+	display: flex;
+}
+
+.star {
+	color: #ffb400;
+	margin-right: 2px;
+}
