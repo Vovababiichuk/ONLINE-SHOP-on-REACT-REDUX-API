@@ -11,6 +11,7 @@
 
 .title {
   margin-bottom: 24px;
+  font-size: 20px;
 }
 
 .categoryImageWrap {
@@ -19,7 +20,7 @@
 
 .categoryName {
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   display: block;
 }

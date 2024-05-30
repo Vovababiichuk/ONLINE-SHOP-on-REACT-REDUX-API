@@ -79,3 +79,7 @@
   margin: 0 auto;
   display: block;
 }
+
+.title {
+  font-size: 20px;
+}
