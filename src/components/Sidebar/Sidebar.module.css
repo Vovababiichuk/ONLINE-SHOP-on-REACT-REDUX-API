@@ -46,6 +46,6 @@
 	text-decoration: underline;
 }
 
-.loading {
-	padding: 20px;
+.skeleton {
+	padding: 20px 0;
 }

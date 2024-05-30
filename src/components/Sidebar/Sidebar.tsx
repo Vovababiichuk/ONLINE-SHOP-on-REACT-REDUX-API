@@ -14,30 +14,39 @@ export const Sidebar = () => {
 		({ categories }: RootState) => categories
 	);
 
-	console.log(list);
-
-	if (isLoading) {
-		return <div className={styles.loading}>Loading...</div>;
-	}
+	// if (isLoading) {
+	// 	return <div className={styles.loading}>Loading...</div>;
+	// }
 
 	return (
 		<section className={styles.sidebar}>
 			<h2 className={styles.title}>Categories</h2>
 			<nav>
-				<ul className={styles.menu}>
-					{list.map((category, id) => (
-						<li key={id}>
-							<NavLink
-								className={({ isActive }) =>
-									`${styles.link} ${isActive ? styles.active : ''}`
-								}
-								to={`/categories/${category}`}
-							>
-								{category}
-							</NavLink>
-						</li>
-					))}
-				</ul>
+				{isLoading ? (
+					<div className={styles.skeleton}>
+						<ul className='menuSkeleton'>
+							<li className='skeletonItem'></li>
+							<li className='skeletonItem'></li>
+							<li className='skeletonItem'></li>
+							<li className='skeletonItem'></li>
+						</ul>
+					</div>
+				) : (
+					<ul className={styles.menu}>
+						{list.map((category, id) => (
+							<li key={id}>
+								<NavLink
+									className={({ isActive }) =>
+										`${styles.link} ${isActive ? styles.active : ''}`
+									}
+									to={`/categories/${category}`}
+								>
+									{category}
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				)}
 			</nav>
 			<div className={styles.sidebarFooter}>
 				<a href='/help' target='_blank' className={styles.link}>
