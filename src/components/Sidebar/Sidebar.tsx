@@ -14,10 +14,6 @@ export const Sidebar = () => {
 		({ categories }: RootState) => categories
 	);
 
-	// if (isLoading) {
-	// 	return <div className={styles.loading}>Loading...</div>;
-	// }
-
 	return (
 		<section className={styles.sidebar}>
 			<h2 className={styles.title}>Categories</h2>
@@ -33,8 +29,8 @@ export const Sidebar = () => {
 					</div>
 				) : (
 					<ul className={styles.menu}>
-						{list.map((category, id) => (
-							<li key={id}>
+						{list.map((category) => (
+							<li key={category}>
 								<NavLink
 									className={({ isActive }) =>
 										`${styles.link} ${isActive ? styles.active : ''}`

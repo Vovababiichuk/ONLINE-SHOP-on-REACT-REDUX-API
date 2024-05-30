@@ -1,58 +1,69 @@
 import { Link } from 'react-router-dom';
 import styles from './Products.module.css';
+import { useSelector } from 'react-redux';
+import { IProducts } from '../../features/products/productSlice';
 
-interface Products {
-	title: string;
-	price: number;
-	description: string;
-	images: string[];
-	amount: number;
-	products: Products[];
-	category: { name: string };
-	style: object;
-}
+type RootState = {
+	products: {
+		list: IProducts[];
+		isLoading: boolean;
+	};
+};
 
-// interface ProductsState {
-// 	list: Products[];
-// 	isLoading: boolean;
-// }
+export const Products = () => {
+	const { list, isLoading } = useSelector(
+		({ products }: RootState) => products
+	);
 
-// interface RootState {
-// 	categories: ProductsState;
-// }
+	const filterProducts = () => {
+		return list.filter(el => el.rating.rate > 4).slice(0, 5);
+	}
 
-export const Products = ({ title, style = {}, products=[], amount }: Products) => {
-	const list = products.filter((_, i) => i < amount);
+	const popularProducts = filterProducts();
 
 	return (
-		<section className={styles.products} style={style}>
-			{title && <h2>{title}</h2>}
-
-			<div className={styles.list}>
-				{list.map(
-					({ id, images, title, category: { name: cat }, price }) => (
-						<Link to={`/products/${id}`} key={id} className={styles.product}>
-							<div
-								className={styles.image}
-								style={{ backgroundImage: `url(${images[0]})` }}
-							/>
-							<div className={styles.wrapper}>
-								<h3 className={styles.title}>{title}</h3>
-								<div className={styles.cat}>{cat}</div>
-								<div className={styles.info}>
-									<div className={styles.prices}>
-										<div className={styles.price}>{price}$</div>
-										<div className={styles.oldPrice}>
-											{Math.floor(price * 0.8)}$
+		<section className={styles.products}>
+			<h2 className={styles.title}>Trending</h2>
+			<div>
+				{isLoading ? (
+					<div className={styles.skeleton}>
+						<ul className='menuSkeleton'>
+							<li className='skeletonItem'></li>
+							<li className='skeletonItem'></li>
+							<li className='skeletonItem'></li>
+							<li className='skeletonItem'></li>
+						</ul>
+					</div>
+				) : (
+					<ul className={styles.card}>
+						{popularProducts.map(product => (
+							<div className={styles.productCardWrap}>
+								<li className={styles.productItem}>
+									<Link
+										to={`/${product.id}`}
+										className={styles.productLink}
+									>
+										<div className={styles.productImageWrap}>
+											<img
+												src={product.image}
+												alt={product.title}
+												className={styles.productImage}
+											/>
 										</div>
-									</div>
-									<div className={styles.purchases}>
-										{Math.floor(Math.random() * 20 + 1)} purchased
-									</div>
-								</div>
+										<div className={styles.productInfo}>
+											<h3 className={styles.productTitle}>{product.title}</h3>
+											<p className={styles.productCategory}>{product.category}</p>
+											<p className={styles.productPrice}>${product.price}</p>
+											<div className={styles.productRating}>
+												<span>{product.rating.rate} / 5</span>
+												<span>({product.rating.count} reviews)</span>
+											</div>
+										</div>
+									</Link>
+								</li>
 							</div>
-						</Link>
-					)
+						))}
+					</ul>
 				)}
 			</div>
 		</section>

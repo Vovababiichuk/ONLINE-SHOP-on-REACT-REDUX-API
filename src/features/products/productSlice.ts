@@ -3,24 +3,21 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { BASE_URL } from '../../utils/constants';
 
-interface Category {
-	id: number;
-	name: string;
-	img: string;
-}
-
-interface Products {
+export interface IProducts {
 	id: number;
 	title: string;
+	category: string;
 	price: number;
 	description: string;
-	category: Category;
-	images: string[];
-	amount: number;
+	image: string;
+	rating: {
+		count: number;
+		rate: number;
+	}
 }
 
 interface categoriesState {
-	list: Products[];
+	list: IProducts[];
 	isLoading: boolean;
 	error: string | null;
 }
@@ -33,13 +30,13 @@ const initialState: categoriesState = {
 	error: null,
 };
 
-export const fetchGetProducts = createAsyncThunk<Products[], void, { rejectValue: string }>(
+export const fetchGetProducts = createAsyncThunk<IProducts[], void, { rejectValue: string }>(
 	'products/fetchGetProducts',
 	async ( _, thunkAPI ) => {
 		try {
-			const res = await axios.get(`${BASE_URL}/products`);
+			const res = await axios.get(`${BASE_URL}`);
 			console.log(res.data)
-			return res.data as Products[];
+			return res.data as IProducts[];
 		} catch (err) {
 			console.log(err);
 			return thunkAPI.rejectWithValue('Error fetching categories');
@@ -56,7 +53,7 @@ const productsSlice = createSlice({
 			state.isLoading = true;
 			state.error = null;
 		});
-		builder.addCase(fetchGetProducts.fulfilled, (state, action: PayloadAction<Products[]>) => {
+		builder.addCase(fetchGetProducts.fulfilled, (state, action: PayloadAction<IProducts[]>) => {
 			state.list = action.payload;
 			state.isLoading = false;
 		});
