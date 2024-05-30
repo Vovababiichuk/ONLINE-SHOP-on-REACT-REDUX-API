@@ -51,7 +51,7 @@ export const Products = () => {
 											<div className={styles.productRating}>
 												<StarRating rating={product.rating.rate} />
 												<span className={styles.review}>
-													({product.rating.count} reviews)
+													{product.rating.count} reviews
 												</span>
 											</div>
 										</div>
