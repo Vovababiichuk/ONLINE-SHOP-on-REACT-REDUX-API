@@ -1,0 +1,25 @@
+.categories {
+  width: 100%;
+  padding: 25px 24px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.categoryImageWrap {
+  margin-bottom: 20px;
+}
+
+.categoryName {
+  text-transform: capitalize;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+}

@@ -12,7 +12,7 @@ type RootState = {
 	};
 };
 
-export const Products = () => {
+export const Products = ({title}: {title: string}) => {
 	const { list, isLoading } = useSelector(
 		({ products }: RootState) => products
 	);
@@ -25,7 +25,7 @@ export const Products = () => {
 
 	return (
 		<section className={styles.products}>
-			<h2 className={styles.title}>Trending</h2>
+			<h2 className={styles.title}>{title}</h2>
 			<div className={styles.cardWrap}>
 				{isLoading ? (
 					<ProductsSkeleton />
