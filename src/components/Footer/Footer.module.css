@@ -1,3 +1,7 @@
+.footerWrap {
+	padding-bottom: 24px;
+}
+
 .footer {
 	display: flex;
 	align-items: center;
