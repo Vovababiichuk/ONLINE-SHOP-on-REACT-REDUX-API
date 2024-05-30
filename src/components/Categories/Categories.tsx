@@ -2,6 +2,10 @@ import { useSelector } from 'react-redux'
 import styles from './Categories.module.css';
 import { Link } from 'react-router-dom'
 import { CategoriesSkeleton } from './CategoriesSkeleton'
+import ELECTRO from '../../assets/images/categories/electro.jpg'
+import JEWELERY from '../../assets/images/categories/jewelery.jpg'
+import MEN_CLOTHING from '../../assets/images/categories/mens-clothing.jpg'
+import WOMEN_CLOTHING from '../../assets/images/categories/women-clothing.jpg'
 
 type RootState = {
 	categories: {
@@ -10,13 +14,12 @@ type RootState = {
 	};
 };
 
-// const categoryImages = {
-//   electronics: 'https://example.com/electronics.jpg',
-//   jewelery: 'https://example.com/jewelery.jpg',
-//   "men's clothing": 'https://example.com/mens_clothing.jpg',
-//   "women's clothing": 'https://example.com/womens_clothing.jpg'
-// };
-
+const categoryImages: Record<string, string> = {
+  electronics: ELECTRO,
+  jewelery: JEWELERY,
+  "men's clothing": MEN_CLOTHING,
+  "women's clothing": WOMEN_CLOTHING
+};
 
 export const Categories = ({ title }: { title: string }) => {
 	const { list, isLoading } = useSelector(
@@ -37,7 +40,7 @@ export const Categories = ({ title }: { title: string }) => {
 									<Link to={`/categories/${category}`} className={styles.productLink}>
 										<div className={styles.categoryImageWrap}>
 											<img
-												src='https://i.imgur.com/ZANVnHE.jpeg'
+												src={categoryImages[category]}
 												alt={category}
 												className={styles.categoryImage}
 											/>
