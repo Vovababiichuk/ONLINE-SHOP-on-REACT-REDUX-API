@@ -5,7 +5,7 @@
 }
 
 .skeletonItem {
-  width: 240px;
+  width: 230px;
   height: 440px;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 }
 
 .skeletonImage {
-  width: 240px;
+  width: 230px;
   height: 280px;
   background-color: #576067;
   border-radius: 8px;

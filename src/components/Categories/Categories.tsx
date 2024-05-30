@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import styles from './Categories.module.css';
-import { ProductsSkeleton } from '../Products/ProductsSkeleton'
 import { Link } from 'react-router-dom'
+import { CategoriesSkeleton } from './CategoriesSkeleton'
 
 type RootState = {
 	categories: {
@@ -9,6 +9,14 @@ type RootState = {
 		isLoading: boolean;
 	};
 };
+
+// const categoryImages = {
+//   electronics: 'https://example.com/electronics.jpg',
+//   jewelery: 'https://example.com/jewelery.jpg',
+//   "men's clothing": 'https://example.com/mens_clothing.jpg',
+//   "women's clothing": 'https://example.com/womens_clothing.jpg'
+// };
+
 
 export const Categories = ({ title }: { title: string }) => {
 	const { list, isLoading } = useSelector(
@@ -20,7 +28,7 @@ export const Categories = ({ title }: { title: string }) => {
 			<h2 className={styles.title}>{title}</h2>
 			<div className={styles.categoryWrap}>
 				{isLoading ? (
-					<ProductsSkeleton />
+					<CategoriesSkeleton />
 				) : (
 					<ul className={styles.category}>
 						{list.map(category => (

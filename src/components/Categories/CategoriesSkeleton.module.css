@@ -1,0 +1,27 @@
+.cardSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.skeletonItem {
+  width: 292px;
+  height: 294px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.skeletonImage {
+  width: 292px;
+  height: 294px;
+  background-color: #576067;
+  border-radius: 8px;
+	margin-bottom: 12px;
+}
+
+.skeletonTitle {
+  height: 40px;
+  background-color: #576067;
+	border-radius: 4px;
+}
