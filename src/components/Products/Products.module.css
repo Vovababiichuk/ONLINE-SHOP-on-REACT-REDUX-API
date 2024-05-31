@@ -23,6 +23,12 @@
 .productItem {
   border-radius: 8px;
   background-color: var(--bg);
+  transition: rotate 0.3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.productItem:hover {
+  rotate: 3deg;
+  box-shadow: 0 0 10px 4px #c19aff;
 }
 
 .productImageWrap {

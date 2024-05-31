@@ -24,6 +24,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: rotate .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.categoryImage:hover {
+  rotate: 3deg;
+  box-shadow: 0 0 10px 4px #c19aff;
 }
 
 .categoryName {
