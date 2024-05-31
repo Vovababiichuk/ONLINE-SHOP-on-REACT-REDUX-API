@@ -1,3 +1,4 @@
+import { Banner } from '../Banner/Banner'
 import { Categories } from '../Categories/Categories'
 import { Hero } from '../Hero/Hero';
 import { Products } from '../Products/Products'
@@ -10,6 +11,7 @@ const Home = () => {
 			<Hero />
 			<Products title='Trending'/>
 			<Categories title='Worth seeing'/>
+			<Banner />
 		</>
 	);
 };
