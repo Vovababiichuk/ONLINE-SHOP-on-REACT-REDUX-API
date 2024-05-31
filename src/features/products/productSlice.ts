@@ -18,13 +18,15 @@ export interface IProducts {
 
 interface categoriesState {
 	list: IProducts[];
+	filtered: IProducts[];
+	// related: IProducts[];
 	isLoading: boolean;
 	error: string | null;
 }
 
 const initialState: categoriesState = {
 	list: [],
-	// filtered: [],
+	filtered: [],
 	// related: [],
 	isLoading: false,
 	error: null,
@@ -35,10 +37,8 @@ export const fetchGetProducts = createAsyncThunk<IProducts[], void, { rejectValu
 	async ( _, thunkAPI ) => {
 		try {
 			const res = await axios.get(`${BASE_URL}`);
-			console.log(res.data)
 			return res.data as IProducts[];
 		} catch (err) {
-			console.log(err);
 			return thunkAPI.rejectWithValue('Error fetching categories');
 		}
 	}
@@ -47,7 +47,11 @@ export const fetchGetProducts = createAsyncThunk<IProducts[], void, { rejectValu
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
-	reducers: {},
+	reducers: {
+		filterByPrice: (state, action: PayloadAction<number>) => {
+			state.filtered = state.list.filter((product) => product.price < action.payload);
+		}
+	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchGetProducts.pending, (state) => {
 			state.isLoading = true;
@@ -64,5 +68,5 @@ const productsSlice = createSlice({
 	},
 });
 
-
+export const { filterByPrice } = productsSlice.actions;
 export default productsSlice.reducer;
