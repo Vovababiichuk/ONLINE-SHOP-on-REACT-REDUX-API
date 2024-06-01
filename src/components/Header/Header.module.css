@@ -10,13 +10,6 @@
 	width: 160px;
 }
 
-/* .info {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-grow: 1;
-} */
-
 .user {
 	display: flex;
 	align-items: center;

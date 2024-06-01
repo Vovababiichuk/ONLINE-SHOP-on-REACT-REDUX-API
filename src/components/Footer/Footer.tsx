@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import { ROUTES } from '../../utils/routes';
 import LOGO from '../../assets/images/logo.svg';
-import { CiFacebook } from 'react-icons/ci';
-import { CiYoutube } from 'react-icons/ci';
-import { IoLogoInstagram } from 'react-icons/io';
+import { IconBrandFacebook, IconBrandInstagram, IconBrandYoutube } from '@tabler/icons-react'
 
 export const Footer = () => {
 	return (
@@ -21,6 +19,7 @@ export const Footer = () => {
 						href='https://volodymyrcodepro.site/'
 						target='_blank'
 						rel='noreferrer'
+						className={styles.link}
 					>
 						VOLODYMYR CODE_PRO
 					</a>
@@ -32,7 +31,7 @@ export const Footer = () => {
 						rel='noreferrer'
 						onClick={e => e.preventDefault()}
 					>
-						<CiYoutube className={styles.icon} />
+						<IconBrandYoutube stroke={1} className={styles.icon} />
 					</a>
 					<a
 						href='#'
@@ -40,7 +39,7 @@ export const Footer = () => {
 						rel='noreferrer'
 						onClick={e => e.preventDefault()}
 					>
-						<CiFacebook className={styles.icon} />
+						<IconBrandFacebook stroke={1} className={styles.icon} />
 					</a>
 					<a
 						href='#'
@@ -48,7 +47,7 @@ export const Footer = () => {
 						rel='noreferrer'
 						onClick={e => e.preventDefault()}
 					>
-						<IoLogoInstagram className={styles.icon} />
+						<IconBrandInstagram stroke={1} className={styles.icon} />
 					</a>
 				</div>
 			</div>

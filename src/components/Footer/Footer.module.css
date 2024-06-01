@@ -26,8 +26,13 @@
 	line-height: 15px;
 }
 
-.rights a {
+.link {
 	color: var(--violet);
+	transition: color .2s ease-in-out;
+}
+
+.link:hover {
+	color: #A771E4;
 }
 
 .socials {
@@ -44,15 +49,6 @@
 }
 
 .icon:hover {
-	color: var(--violet);
+	color: #a771E4;
 }
 
-.socials a:nth-of-type(2) .icon {
-	width: 23px;
-	height: 23px;
-}
-
-.socials a:nth-of-type(3) .icon {
-	width: 25px;
-	height: 25px;
-}
